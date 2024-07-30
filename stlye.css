@@ -5,10 +5,11 @@
 body{
     width: 100%;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: rgb(35, 50, 97);
 }
 
 form{
+    color: aliceblue;
     width: 350px;
     margin: 270px auto;
     text-align: center;
