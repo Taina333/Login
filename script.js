@@ -32,8 +32,38 @@ document.getElementById('formulario').addEventListener('submit',function login(e
 }
 
     if(loginValido == true){
-        alert('sucesso');
+        alert('Sucesso');
         location.href = "home.html";
     }else{
-        alert('usuario ou senha incorreta');
+        alert('Usuário ou senha incorreta');
     }});
+
+    document.getElementById('registrar').addEventListener('click',function(){
+        var user = document.getElementById('user').value;
+        var senha = document.getElementById('senha').value;
+
+        if (user && senha === usuarios){
+            alert('Usuário existente');
+        
+        }else if (user && senha != usuarios){
+            usuarios.push({ usuario: user, senha: senha});
+            alert('Usuário registrado com sucesso');
+        }else{
+            alert('Preencha ambos os campos para registrar');
+        }
+        }
+    );
+
+/*
+    document.getElementById('registrar').addEventListener('click',function(){
+        var user = document.getElementById('user').value;
+        var senha = document.getElementById('senha').value;
+
+        if (user && senha){
+            usuarios.push({ usuario: user, senha: senha});
+            alert('Usuário registrado com sucesso');
+        }else{
+            alert('Preencha ambos os campos para registrar');
+        }
+        }
+    );*/
