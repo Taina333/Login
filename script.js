@@ -17,6 +17,7 @@ const usuarios = [
     }
 ]
 
+<!-- login com sucesso -->
 document.getElementById('formulario').addEventListener('submit',function login(event){
     event.preventDefault();
 
@@ -35,35 +36,27 @@ document.getElementById('formulario').addEventListener('submit',function login(e
         alert('Sucesso');
         location.href = "home.html";
     }else{
+<!-- login informação incorreta -->
         alert('Usuário ou senha incorreta');
     }});
 
-    document.getElementById('registrar').addEventListener('click',function(){
-        var user = document.getElementById('user').value;
-        var senha = document.getElementById('senha').value;
+<!-- registrar erro -->
+document.getElementById('registrar').addEventListener('click', function() {
+    var user = document.getElementById('user').value;
+    var senha = document.getElementById('senha').value;
 
-        if (user && senha === usuarios){
-            alert('Usuário existente');
-        
-        }else if (user && senha != usuarios){
-            usuarios.push({ usuario: user, senha: senha});
-            alert('Usuário registrado com sucesso');
-        }else{
-            alert('Preencha ambos os campos para registrar');
-        }
-        }
-    );
+    if (!user || !senha) {
+        alert('Preencha ambos os campos para registrar');
+        return;
+    }
+<!-- registrar usuário existente -->
+    var usuarioExistente = usuarios.some(u => u.usuario === user);
 
-/*
-    document.getElementById('registrar').addEventListener('click',function(){
-        var user = document.getElementById('user').value;
-        var senha = document.getElementById('senha').value;
-
-        if (user && senha){
-            usuarios.push({ usuario: user, senha: senha});
-            alert('Usuário registrado com sucesso');
-        }else{
-            alert('Preencha ambos os campos para registrar');
-        }
-        }
-    );*/
+    if (usuarioExistente) {
+        alert('Usuário já registrado');
+    } else {
+<!-- registrar com sucesso -->
+        usuarios.push({ usuario: user, senha: senha });
+        alert('Usuário registrado com sucesso');
+    }
+    });
