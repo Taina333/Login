@@ -34,7 +34,7 @@ document.getElementById('formulario').addEventListener('submit',function login(e
 
     if(loginValido == true){
         alert('Sucesso');
-        location.href = "home.html";
+        location.href = "home/home.html";
     }else{
 /* login informação incorreta */
         alert('Usuário ou senha incorreta');
