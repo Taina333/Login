@@ -17,7 +17,7 @@ const usuarios = [
     }
 ]
 
-<!-- login com sucesso -->
+/* login com sucesso */
 document.getElementById('formulario').addEventListener('submit',function login(event){
     event.preventDefault();
 
@@ -36,11 +36,11 @@ document.getElementById('formulario').addEventListener('submit',function login(e
         alert('Sucesso');
         location.href = "home.html";
     }else{
-<!-- login informação incorreta -->
+/* login informação incorreta */
         alert('Usuário ou senha incorreta');
     }});
 
-<!-- registrar erro -->
+/* registrar erro */
 document.getElementById('registrar').addEventListener('click', function() {
     var user = document.getElementById('user').value;
     var senha = document.getElementById('senha').value;
@@ -49,13 +49,13 @@ document.getElementById('registrar').addEventListener('click', function() {
         alert('Preencha ambos os campos para registrar');
         return;
     }
-<!-- registrar usuário existente -->
+/* registrar usuário existente */
     var usuarioExistente = usuarios.some(u => u.usuario === user);
 
     if (usuarioExistente) {
         alert('Usuário já registrado');
     } else {
-<!-- registrar com sucesso -->
+/* registrar com sucesso */
         usuarios.push({ usuario: user, senha: senha });
         alert('Usuário registrado com sucesso');
     }
